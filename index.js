@@ -53,7 +53,10 @@ const Organizer = (dir) => {
                 let spath = path.resolve(dir, file);
                 let fileExt = path.extname(spath).slice(1);
                 let ftype = f(fileExt);
-                fs.copyFileSync(spath, path.resolve(dir, "organized", ftype, file));
+                if (query[2] == 'cut' && file != 'index.js')
+                    fs.renameSync(spath, path.resolve(dir, "organized", ftype, file));
+                else
+                    fs.copyFileSync(spath, path.resolve(dir, "organized", ftype, file));
             }
         })
     }
@@ -125,7 +128,8 @@ else if (query[0] == "tree") {
 }
 
 else if (query[0] == 'help') {
-    console.log("For organize working folder only run 'node index.js organizeMe only")
+    console.log("For organize working folder copy and paste only run 'node index.js organizeMe only")
+    console.log("For organize working folder cut and paste only run 'node index.js organizeMe only cut")
     console.log("For organize working folder and all its sub directries run 'node index.js organizeMe deep")
     console.log("For organize any folder only run 'node index.js organizePath only pathofFolder")
     console.log("For organize any folder and all its sub directries run 'node index.js organizePath deep pathofFolder")
