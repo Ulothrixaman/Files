@@ -30,6 +30,3 @@ Organize you file with node and view folder and file structure
 - 6. Now a folder is created in you directory named `Organized` which contains your files
 
    ![s6](https://github.com/deepaksuthar40128/Files-Organizer/assets/92250394/1b76f10c-aee8-4f9b-a838-a6edeba25c52)
-
-
-### If you have any tips/queries or other for me you can contact me [Deepak Suthar](https://deepaksuthar.vercel.app)
